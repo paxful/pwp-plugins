@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Paxful\n"
+"POT-Creation-Date: 2020-02-16 19:05+0600\n"
+"PO-Revision-Date: 2020-02-16 19:06+0600\n"
+"Last-Translator: oleg <oleg@example.com>\n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-KeywordsList: __;_e;_e(sprintf;__(sprintf\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../includes/class-wc-gateway-paxful.php:51
+#: ../includes/class-wc-gateway-paxful.php:134
+#: ../includes/class-wc-gateway-paxful.php:140
+msgid "Paxful"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:125
+msgid "Enable/Disable"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:127
+msgid "Enable plugin"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:131
+msgid "Title"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:133
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:137
+msgid "Description"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:139
+msgid "This controls the description which the user sees during checkout."
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:143
+#: ../includes/class-wc-gateway-paxful.php:145
+msgid "Merchant Id"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:149
+#: ../includes/class-wc-gateway-paxful.php:151
+msgid "Api key"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:155
+#: ../includes/class-wc-gateway-paxful.php:157
+msgid "Api secret"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:161
+#: ../includes/class-wc-gateway-paxful.php:163
+msgid "Bitcoin address"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:167
+msgid "Debug"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:169
+msgid "Enable logging"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:173
+msgid "Text for \"Place Order\" button"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:175
+msgid "Pay with Paxful"
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:293
+#: ../includes/class-wc-gateway-paxful.php:349
+msgid "Order has been paid."
+msgstr ""
+
+#: ../includes/class-wc-gateway-paxful.php:299
+#: ../includes/class-wc-gateway-paxful.php:353
+msgid "Order has been cancelled."
+msgstr ""
+
+#: ../paxful-payments.php:44
+msgid "Settings"
+msgstr ""
+
+#: ../paxful-payments.php:87
+msgid "Paxful Payment Info"
+msgstr ""
+
+#: ../templates/admin/admin-options.php:11
+msgid "Return to payments"
+msgstr ""
+
+#: ../templates/admin/admin-options.php:17
+#, php-format
+msgid ""
+"Please go to <a href=\"%s\" target=\"_blank\">%s</a> to sign up and get hold "
+"of your account information that you need to enter here."
+msgstr ""
+
+#: ../templates/admin/admin-options.php:26
+#, php-format
+msgid ""
+"Please configure open callbacks in <a href=\"%s\" target=\"_blank\">Merchant "
+"Dashboard</a>."
+msgstr ""
+
+#: ../templates/admin/admin-options.php:33
+#, php-format
+msgid ""
+"Purchase Completed Event Callback Url: <a href=\"%s\" target=\"_blank\">%s</"
+"a>"
+msgstr ""
+
+#: ../templates/admin/admin-options.php:41
+#, php-format
+msgid ""
+"Purchase Completed Redirect Url: <a href=\"%s\" target=\"_blank\">%s</a>"
+msgstr ""
+
+#: ../templates/admin/payment-info.php:12
+#| msgid "Payment"
+msgid "Payment Info"
+msgstr ""
+
+#: ../templates/admin/payment-info.php:14
+msgid "Track ID"
+msgstr ""
