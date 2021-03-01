@@ -64,7 +64,7 @@ class Paxful_Payments {
 			return;
 		}
 
-		include_once dirname( __FILE__ ) . '/includes/class-wc-gateway-paxful.php';
+		include_once dirname(__FILE__) . '/includes/class-wc-gateway-paxful.php';
 	}
 
 

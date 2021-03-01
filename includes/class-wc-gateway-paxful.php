@@ -182,6 +182,30 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 		);
 	}
 
+	public function get_currency_list() {
+	    $url = "https://paxful.com/api/currency/rates";
+        $response = wp_remote_post( $url, array(
+                'method' => 'POST',
+                'headers' =>[
+                    'content-type'=>'text/plain',
+                    'accept' => 'application/json'
+                ]
+
+            )
+        );
+
+        if ( is_wp_error( $response ) ) {
+            $error_message = $response->get_error_message();
+            echo "Something went wrong: $error_message";
+        } else {
+            $responseObject = json_decode(wp_remote_retrieve_body($response));
+            $currencyList = [];
+            foreach ($responseObject->data as $currency) {
+                $currencyList[] = $currency->code;
+            }
+            return $currencyList;
+        }
+    }
 	/**
 	 * Check if this gateway is available in the user's country based on currency.
 	 *
@@ -192,7 +216,7 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 			get_woocommerce_currency(),
 			apply_filters(
 				'woocommerce_paxful_supported_currencies',
-				array( 'BTC' )
+				array_merge(array('BTC'),$this->get_currency_list())
 			),
 			true
 		);
