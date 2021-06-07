@@ -1,141 +1,141 @@
+# Copyright (C) 2021 Paxful
+# This file is distributed under the same license as the Paxful Pay for WooCommerce plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Paxful\n"
-"POT-Creation-Date: 2020-02-16 19:05+0600\n"
-"PO-Revision-Date: 2020-02-16 19:06+0600\n"
-"Last-Translator: oleg <oleg@example.com>\n"
-"Language-Team: \n"
-"Language: sv_SE\n"
+"Project-Id-Version: Paxful Pay for WooCommerce 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pay-with-paxful-php\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
-"X-Poedit-KeywordsList: __;_e;_e(sprintf;__(sprintf\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SearchPath-0: ..\n"
+"POT-Creation-Date: 2021-06-04T13:19:15+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: paxful-payments\n"
 
-#: ../includes/class-wc-gateway-paxful.php:51
-#: ../includes/class-wc-gateway-paxful.php:134
-#: ../includes/class-wc-gateway-paxful.php:140
+#. Plugin Name of the plugin
+msgid "Paxful Pay for WooCommerce"
+msgstr ""
+
+#. Description of the plugin
+msgid "Provides a Payment Gateway through Paxful for WooCommerce."
+msgstr ""
+
+#. Author of the plugin
+#: includes/class-wc-gateway-paxful.php:56
+#: includes/class-wc-gateway-paxful.php:136
+#: includes/class-wc-gateway-paxful.php:142
 msgid "Paxful"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:125
+#. Author URI of the plugin
+msgid "http://paxful.com/"
+msgstr ""
+
+#: includes/class-wc-gateway-paxful.php:112
+msgid "Paxful does not support your store currency."
+msgstr ""
+
+#: includes/class-wc-gateway-paxful.php:127
 msgid "Enable/Disable"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:127
+#: includes/class-wc-gateway-paxful.php:129
 msgid "Enable plugin"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:131
+#: includes/class-wc-gateway-paxful.php:133
 msgid "Title"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:133
+#: includes/class-wc-gateway-paxful.php:135
 msgid "This controls the title which the user sees during checkout."
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:137
+#: includes/class-wc-gateway-paxful.php:139
 msgid "Description"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:139
+#: includes/class-wc-gateway-paxful.php:141
 msgid "This controls the description which the user sees during checkout."
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:143
-#: ../includes/class-wc-gateway-paxful.php:145
+#: includes/class-wc-gateway-paxful.php:145
+#: includes/class-wc-gateway-paxful.php:147
 msgid "Merchant Id"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:149
-#: ../includes/class-wc-gateway-paxful.php:151
-msgid "Api key"
+#: includes/class-wc-gateway-paxful.php:151
+#: includes/class-wc-gateway-paxful.php:153
+msgid "API key"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:155
-#: ../includes/class-wc-gateway-paxful.php:157
-msgid "Api secret"
+#: includes/class-wc-gateway-paxful.php:157
+#: includes/class-wc-gateway-paxful.php:159
+msgid "API secret"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:161
-#: ../includes/class-wc-gateway-paxful.php:163
-msgid "Bitcoin address"
+#: includes/class-wc-gateway-paxful.php:163
+#: includes/class-wc-gateway-paxful.php:165
+msgid "External bitcoin address for payouts"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:167
+#: includes/class-wc-gateway-paxful.php:166
+msgid "Optional"
+msgstr ""
+
+#: includes/class-wc-gateway-paxful.php:170
 msgid "Debug"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:169
+#: includes/class-wc-gateway-paxful.php:172
 msgid "Enable logging"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:173
+#: includes/class-wc-gateway-paxful.php:176
 msgid "Text for \"Place Order\" button"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:175
-msgid "Pay with Paxful"
+#: includes/class-wc-gateway-paxful.php:178
+msgid "Paxful Pay"
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:293
-#: ../includes/class-wc-gateway-paxful.php:349
+#: includes/class-wc-gateway-paxful.php:321
+#: includes/class-wc-gateway-paxful.php:378
 msgid "Order has been paid."
 msgstr ""
 
-#: ../includes/class-wc-gateway-paxful.php:299
-#: ../includes/class-wc-gateway-paxful.php:353
+#: includes/class-wc-gateway-paxful.php:328
 msgid "Order has been cancelled."
 msgstr ""
 
-#: ../paxful-payments.php:44
+#: includes/class-wc-gateway-paxful.php:381
+msgid "Order has been cancelled by webhook."
+msgstr ""
+
+#: paxful-payments.php:41
 msgid "Settings"
 msgstr ""
 
-#: ../paxful-payments.php:87
+#: paxful-payments.php:86
 msgid "Paxful Payment Info"
 msgstr ""
 
-#: ../templates/admin/admin-options.php:11
-msgid "Return to payments"
+#. translators: 1: url 2: url
+#: templates/admin/admin-options.php:17
+msgid "Go to <a href=\"%1$s\" target=\"_blank\">%2$s</a> to create an account."
 msgstr ""
 
-#: ../templates/admin/admin-options.php:17
-#, php-format
-msgid ""
-"Please go to <a href=\"%s\" target=\"_blank\">%s</a> to sign up and get hold "
-"of your account information that you need to enter here."
+#. translators: %s: URL
+#: templates/admin/admin-options.php:26
+msgid "Check the configuration guide <a href=\"%s\" target=\"_blank\">here</a>"
 msgstr ""
 
-#: ../templates/admin/admin-options.php:26
-#, php-format
-msgid ""
-"Please configure open callbacks in <a href=\"%s\" target=\"_blank\">Merchant "
-"Dashboard</a>."
-msgstr ""
-
-#: ../templates/admin/admin-options.php:33
-#, php-format
-msgid ""
-"Purchase Completed Event Callback Url: <a href=\"%s\" target=\"_blank\">%s</"
-"a>"
-msgstr ""
-
-#: ../templates/admin/admin-options.php:41
-#, php-format
-msgid ""
-"Purchase Completed Redirect Url: <a href=\"%s\" target=\"_blank\">%s</a>"
-msgstr ""
-
-#: ../templates/admin/payment-info.php:12
-#| msgid "Payment"
+#: templates/admin/payment-info.php:10
 msgid "Payment Info"
 msgstr ""
 
-#: ../templates/admin/payment-info.php:14
+#: templates/admin/payment-info.php:12
 msgid "Track ID"
 msgstr ""
