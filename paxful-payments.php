@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: Pay with Paxful for WooCommerce
+ * Plugin Name: Paxful Pay for WooCommerce
  * Description: Provides a Payment Gateway through Paxful for WooCommerce.
  * Author: Paxful
  * Author URI: http://paxful.com/
@@ -64,7 +64,7 @@ class Paxful_Payments {
 			return;
 		}
 
-		include_once dirname(__FILE__) . '/includes/class-wc-gateway-paxful.php';
+		include_once dirname( __FILE__ ) . '/includes/class-wc-gateway-paxful.php';
 	}
 
 

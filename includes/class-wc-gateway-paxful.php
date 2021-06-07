@@ -11,8 +11,6 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 	 * @var string
 	 */
 	protected $api_endpoint = 'https://paxful.com/wallet/pay';
-	// protected $api_endpoint = 'https://test.paxful.com/wallet/pay';
-	// protected $api_endpoint = 'https://echo.px.zone/wallet/pay';
 
 	/**
 	 * Merchant ID
@@ -79,7 +77,10 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 		$this->order_button_text = isset( $this->settings['order_button_text'] ) ? $this->settings['order_button_text'] : $this->order_button_text;
 
 		// Actions
-		add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
+		add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array(
+			$this,
+			'process_admin_options'
+		) );
 		add_action( 'woocommerce_thankyou_' . $this->id, array( $this, 'thankyou_page' ) );
 
 		// Payment listener/API hook
@@ -109,11 +110,11 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 			);
 		} else {
 			?>
-			<div class="inline error">
-				<p>
-					<strong><?php esc_html_e( 'Gateway disabled', 'woocommerce' ); ?></strong>: <?php esc_html_e( 'Paxful does not support your store currency.', 'paxful-payments' ); ?>
-				</p>
-			</div>
+            <div class="inline error">
+                <p>
+                    <strong><?php esc_html_e( 'Gateway disabled', 'woocommerce' ); ?></strong>: <?php esc_html_e( 'Paxful does not support your store currency.', 'paxful-payments' ); ?>
+                </p>
+            </div>
 			<?php
 		}
 	}
@@ -177,35 +178,37 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 			'order_button_text' => array(
 				'title'   => __( 'Text for "Place Order" button', 'paxful-payments' ),
 				'type'    => 'text',
-				'default' => __( 'Pay with Paxful', 'paxful-payments' ),
+				'default' => __( 'Paxful Pay', 'paxful-payments' ),
 			),
 		);
 	}
 
 	public function get_currency_list() {
-	    $url = "https://paxful.com/api/currency/rates";
-        $response = wp_remote_post( $url, array(
-                'method' => 'POST',
-                'headers' =>[
-                    'content-type'=>'text/plain',
-                    'accept' => 'application/json'
-                ]
+		$url      = "https://paxful.com/api/currency/rates";
+		$response = wp_remote_post( $url, array(
+				'method'  => 'POST',
+				'headers' => [
+					'content-type' => 'text/plain',
+					'accept'       => 'application/json'
+				]
 
-            )
-        );
+			)
+		);
 
-        if ( is_wp_error( $response ) ) {
-            $error_message = $response->get_error_message();
-            echo "Something went wrong: $error_message";
-        } else {
-            $responseObject = json_decode(wp_remote_retrieve_body($response));
-            $currencyList = [];
-            foreach ($responseObject->data as $currency) {
-                $currencyList[] = $currency->code;
-            }
-            return $currencyList;
-        }
-    }
+		if ( is_wp_error( $response ) ) {
+			$error_message = $response->get_error_message();
+			echo "Something went wrong: $error_message";
+		} else {
+			$responseObject = json_decode( wp_remote_retrieve_body( $response ) );
+			$currencyList   = [];
+			foreach ( $responseObject->data as $currency ) {
+				$currencyList[] = $currency->code;
+			}
+
+			return $currencyList;
+		}
+	}
+
 	/**
 	 * Check if this gateway is available in the user's country based on currency.
 	 *
@@ -216,7 +219,7 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 			get_woocommerce_currency(),
 			apply_filters(
 				'woocommerce_paxful_supported_currencies',
-				array_merge(array('BTC'),$this->get_currency_list())
+				array_merge( array( 'BTC' ), $this->get_currency_list() )
 			),
 			true
 		);
@@ -363,8 +366,8 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 			// $apiSeal    = $payload['apiseal'];
 			// $calculated = $this->generate_apiseal( $payload );
 			// if ( $calculated !== $apiSeal ) {
-				// @todo Fix it
-				// throw new Exception( 'apiseal verification is failed' );
+			// @todo Fix it
+			// throw new Exception( 'apiseal verification is failed' );
 			// }
 
 			// Get order by track_id
@@ -394,8 +397,8 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 	/**
 	 * Prevent pending cancellation
 	 *
-	 * @param bool     $is_cancel
-	 * @param bool     $is_checkout
+	 * @param bool $is_cancel
+	 * @param bool $is_checkout
 	 * @param WC_Order $order
 	 *
 	 * @return bool
