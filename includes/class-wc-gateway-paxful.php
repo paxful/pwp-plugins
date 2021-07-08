@@ -256,6 +256,51 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 	}
 
 	/**
+	 * Limit length of an arg.
+	 *
+	 * @param string $string Argument to limit.
+	 * @param integer $limit Limit size in characters.
+	 *
+	 * @return string
+	 */
+	protected function limit_length( $string, $limit = 127 ) {
+		$str_limit = $limit - 3;
+		if ( function_exists( 'mb_strimwidth' ) ) {
+			if ( mb_strlen( $string ) > $limit ) {
+				$string = mb_strimwidth( $string, 0, $str_limit ) . '...';
+			}
+		} else {
+			if ( strlen( $string ) > $limit ) {
+				$string = substr( $string, 0, $str_limit ) . '...';
+			}
+		}
+
+		return $string;
+	}
+
+	protected function trim_string( $text ) {
+		return $this->limit_length( html_entity_decode( wc_trim_string( wp_strip_all_tags( $text ), 127 ), ENT_NOQUOTES, 'UTF-8' ), 127 );
+	}
+
+	protected function prepare_items( $items ) {
+		$order_items = [];
+		foreach ( $items as $WC_order_item ) {
+			$product_id       = $WC_order_item->get_data()['product_id'];
+			$product_instance = wc_get_product( $product_id );
+
+			$item          = [
+				'name'        => $this->trim_string( $WC_order_item->get_name() ),
+				'description' => $this->trim_string( $product_instance->get_description() ),
+				'quantity'    => (int) $WC_order_item->get_quantity(),
+				'price'       => wc_float_to_string( (float) $product_instance->get_price() ),
+			];
+			$order_items[] = $item;
+		}
+
+		return $order_items;
+	}
+
+	/**
 	 * Process Payment
 	 *
 	 * @param int $order_id
@@ -272,6 +317,7 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 
 		$amount   = $order->get_total();
 		$currency = $order->get_currency();
+		$items    = $this->prepare_items( $order->get_items() );
 
 		$payload = array(
 			'merchant'   => $this->merchant_id,
@@ -280,6 +326,7 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 			'track_id'   => $track_id,
 			'amount'     => $amount,
 			'user_email' => $order->get_billing_email(),
+			'items'      => $items
 		);
 
 		if ( ! empty( $this->bitcoin_address ) ) {
@@ -455,7 +502,7 @@ class WC_Gateway_Paxful extends WC_Payment_Gateway {
 		unset( $payload['apiseal'] );
 		ksort( $payload );
 
-		return hash_hmac( 'sha256', http_build_query( $payload, null, '&', PHP_QUERY_RFC3986 ), $this->api_secret );
+		return hash_hmac( 'sha256', http_build_query( $payload ), $this->api_secret );
 	}
 
 	/**
