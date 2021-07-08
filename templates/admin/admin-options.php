@@ -42,7 +42,7 @@ defined( 'ABSPATH' ) || exit;
         <td>
             <pre>
     <?php
-    echo get_site_url() . "/wc-api/WC_Gateway_Paxful/";
+    echo WC()->api_request_url( 'WC_Gateway_Paxful' );
     ?>
 </pre>
         </td>
